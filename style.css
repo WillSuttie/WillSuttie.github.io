@@ -1,0 +1,145 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121213;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+#alert-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style for the word display container */
+#guessesDisplay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Style for individual word rows */
+.div-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for individual letter boxes */
+.dynamic-div {
+    display: flex;
+    text-align: center;
+    font-family: 'Franklin Gothic', Arial, Helvetica;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+}
+
+/* Style for the guess input area */
+#guessInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Style for the input field */
+#guessField {
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #3A3A3C;
+    background-color: #121213;
+    color: #FFFFFF;
+    width: 100%;
+    max-width: 300px;
+}
+
+#submitGuess {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3A3A3C;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#virtualKeyboard {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.keyboard-row {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+/* Style for individual keyboard keys */
+.key-div {
+    text-align: center;
+    font-family: 'Franklin Gothic', Arial, Helvetica;
+    font-size: 20px;
+    width: 25px;
+    height: 35px;
+    margin: 3px;
+    border: 2px solid #818384;
+    border-radius: 5px;
+    background: #818384;
+    color: #FFFFFF;
+}
+
+.correct {
+    background-color: #538D4E;
+    border: 1px solid #538D4E;
+}
+
+.partial {
+    background-color: #B59F3B;
+    border: 1px solid #B59F3B;
+}
+
+.incorrect {
+    background-color: #3A3A3C;
+    border: 1px solid #3A3A3C;
+}
+
+.none {
+    background-color: #121213;
+    border: 1px solid #818384;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+}
+
+.alert {
+    background-color: #430b10;
+    color: #FFFFFF;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Franklin Gothic', Arial, Helvetica;
+    display: inline-block;
+}
