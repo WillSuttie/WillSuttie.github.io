@@ -114,7 +114,7 @@ const keyboard = [
             updateDisplay();
             // Check if the maximum number of guesses has been reached after adding the new guess
             if ((guesses.length >= game_length)&&(!won)) {
-                showAlert(`You are a loser. The answer was ${target_word}. Press F5 to play again.`, true);
+                showAlert(`You are a loser. The answer was ${target_word}. Reload page to play again.`, true);
                 document.getElementById("guessInput").style.display = "none";
                 return; // Exit the function to prevent further input
             }
