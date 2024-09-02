@@ -1,6 +1,6 @@
-        document.addEventListener('DOMContentLoaded', () => {
-            function getRandomInteger(min, max) {
-                return Math.floor(Math.random() * (max - min + 1)) + min;
+document.addEventListener('DOMContentLoaded', () => {
+    function getRandomInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
             }
             const word_length = 5;
             let target_word = null;
@@ -84,7 +84,7 @@ const keyboard = [
             }
             if (_guess === target_word){
                 won = true;
-                showAlert("You win! Press F5 to play again!", true);
+                showAlert("You win! Reload page to play again!", true);
                 document.getElementById("guessInput").style.display = "none";
             }
             //add current guess to the array
