@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const keyButton = document.createElement('button');
                 keyButton.className = 'key-button';
                 keyButton.textContent = key;
-                keyButton.style.textAlign = 'center';
+                keyButton.style.display = 'flex';
+                keyButton.style.justifyContent = 'center';
+                keyButton.style.alignItems = 'center';
                 keyButton.style.fontFamily = 'Franklin Gothic, Arial, Helvetica';
                 keyButton.style.fontSize = '20px';
                 keyButton.style.width = key == '⌫'? '55px': '25px';
