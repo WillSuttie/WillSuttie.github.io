@@ -52,37 +52,6 @@ html, body {
     margin: 2px;
 }
 
-/* Style for the guess input area */
-#guessInput {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-/* Style for the input field */
-#guessField {
-    padding: 10px;
-    font-size: 16px;
-    text-align: center;
-    border: 2px solid #3A3A3C;
-    background-color: #121213;
-    color: #FFFFFF;
-    width: 100%;
-    max-width: 300px;
-}
-
-#submitGuess {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #3A3A3C;
-    color: #FFFFFF;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
 #virtualKeyboard {
     display: flex;
     
@@ -97,7 +66,7 @@ html, body {
 }
 
 /* Style for individual keyboard keys */
-.key-div {
+.key-button {
     text-align: center;
     font-family: 'Franklin Gothic', Arial, Helvetica;
     font-size: 20px;
