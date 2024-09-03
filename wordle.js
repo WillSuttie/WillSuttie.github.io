@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (_guess === target_word){
             won = true;
             showAlert("You win! Reload page to play again!", true);
+            gameOver = true;
         }
           guesses.push(_guess);
         for (let i = 0; i < word_length; i++) {
