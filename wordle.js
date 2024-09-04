@@ -185,9 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateCurrentGuessDisplay() {
-        if (!gameOver){
+        if (!gameOver) {
             const display = document.getElementById('guessesDisplay');
             display.innerHTML = '';
+    
+            // Render all previous guesses
             for (let i = 0; i < guesses.length; i++) {
                 const guess = guesses[i];
                 const status = Array(guess.length).fill('incorrect');
@@ -211,10 +213,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 createGuessRow(guess, status);
             }
+    
+            // Render the current guess
             const paddedGuess = thisGuess.padEnd(word_length, ' ');
             const guessStatus = Array(paddedGuess.length).fill('none');
             createGuessRow(paddedGuess, guessStatus);
-            display.offsetHeight;
+    
+            // Render empty rows for remaining guesses
             const remainingRows = game_length - guesses.length - 1;
             for (let i = 0; i < remainingRows; i++) {
                 createGuessRow(' '.repeat(word_length), Array(word_length).fill('none'));
