@@ -117,21 +117,21 @@ html, body {
 }
 
 .alert-button {
-    background-color: #FFFFFF; /* White background for contrast */
-    color: #430b10; /* Matches the alert background color for consistent design */
-    border: none; /* Remove default border */
-    padding: 5px 10px; /* Add some padding for a clickable area */
-    margin: 0; /* Remove margin */
-    cursor: pointer; /* Pointer cursor */
-    font-family: 'Franklin Gothic', Arial, Helvetica; /* Matching font */
-    border-left-style: solid;
-    border-left-width: 20px;
-    align-self: center; /* Center the button vertically within the flex container */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    text-align: center; /* Center the text */
-    width: 100%; /* Ensure the button takes full width of its container */
-    max-width: 200px; /* Set a maximum width to prevent it from stretching too much */
-    border-radius: 3px; /* Make the edges subtle with slight rounding */
+    background-color: #FFFFFF;
+    color: #430b10;
+    border: none;
+    padding: 5px 10px;
+    margin: 0;
+    cursor: pointer;
+    font-family: 'Franklin Gothic', Arial, Helvetica;
+    align-self: center;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 3px; 
+    outline: 20px solid #430b10;
+    outline-offset: -20px;
 }
 
 .alert-button:hover {
