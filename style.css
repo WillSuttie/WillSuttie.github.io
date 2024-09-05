@@ -118,16 +118,21 @@ html, body {
 }
 
 .alert-button {
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     color: #430b10;
     border: none;
     padding: 5px 10px;
+    margin: 0;
     border-radius: 3px;
     cursor: pointer;
     font-family: 'Franklin Gothic', Arial, Helvetica;
     border-left-style: solid;
     border-left-width: 20px;
-    justify-content: center;
+    align-self: center;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
 }
 
 .alert-button:hover {
