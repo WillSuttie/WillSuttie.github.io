@@ -76,22 +76,22 @@ html, body {
     border: 2px solid #818384;
     border-radius: 5px;
     background: #818384;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .correct {
-    background-color: #538D4E;
-    border: 1px solid #538D4E;
+    background-color: #538d4E;
+    border: 1px solid #538d4E;
 }
 
 .partial {
-    background-color: #B59F3B;
-    border: 1px solid #B59F3B;
+    background-color: #b59f3b;
+    border: 1px solid #b59f3b;
 }
 
 .incorrect {
-    background-color: #3A3A3C;
-    border: 1px solid #3A3A3C;
+    background-color: #3a3a3c;
+    border: 1px solid #3a3a3c;
 }
 
 .none {
@@ -104,11 +104,32 @@ html, body {
 
 .alert {
     background-color: #430b10;
-    color: #FFFFFF;
-    padding: 15px;
+    color: #ffffff;
+    padding: 10px;
     margin: 10px;
     border-radius: 5px;
-    text-align: center;
     font-family: 'Franklin Gothic', Arial, Helvetica;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    text-align: center;
+}
+
+.alert-button {
+    background-color: #ffffff;
+    color: #430b10;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic', Arial, Helvetica;
+    border-left-style: solid;
+    border-left-width: 20px;
+    justify-content: center;
+}
+
+.alert-button:hover {
+    background-color: #f1f1f1;
 }
