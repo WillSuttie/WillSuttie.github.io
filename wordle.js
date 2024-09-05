@@ -2,6 +2,7 @@
 //!                                       - HOW EVENTLISTENERS WORK
 //!                                       - WHEN YOU FIND A PROBLEM THAT SEEMS COMPLICATED, LOOK FOR A SIMPLE SOLUTION
 //!                                       - "TOO MANY COMMENTS" IS A MUCH EASIER PROBLEM TO FIX THAN "TOO FEW COMMENTS"
+//!                                       - IF YOU LOOK FOR SIMPLE BUGS FIRST YOU FEEL LIKE LESS OF AN IDIOT WHEN YOU FIND THEM
 
 document.addEventListener('DOMContentLoaded', () => {
     let won = false;
@@ -153,6 +154,16 @@ const OTHER_WORDS = ["aahed", "aalii", "aargh", "aarti", "abaca", "abaci", "abac
     function updateDisplay() {
         const display = document.getElementById('guessesDisplay');
         display.innerHTML = '';
+        generateGuessArray()
+        //displays empty rows for remaining guesses
+        const remainingRows = GAME_LENGTH - guesses.length;
+        for (let i = 0; i < remainingRows; i++) {
+            createGuessRow(' '.repeat(WORD_LENGTH), NONE_STATUS)
+        }
+    }
+    
+    function generateGuessArray(){
+        
         for (let i = 0; i < guesses.length; i++) {
             const guess = guesses[i];
             const status = Array(guess.length).fill('incorrect');
@@ -169,7 +180,6 @@ const OTHER_WORDS = ["aahed", "aalii", "aargh", "aarti", "abaca", "abaci", "abac
             }
             for (let j = 0; j < guess.length; j++) {
                 if (status[j] === 'correct') continue;
-
                 if (targetWord.includes(guess[j]) && targetLetterCounts[guess[j]] > 0) {
                     status[j] = 'partial';
                     targetLetterCounts[guess[j]]--;
@@ -177,47 +187,17 @@ const OTHER_WORDS = ["aahed", "aalii", "aargh", "aarti", "abaca", "abaci", "abac
             }
             createGuessRow(guess, status);
         }
-        //displays empty rows for remaining guesses
-        const remainingRows = GAME_LENGTH - guesses.length;
-        for (let i = 0; i < remainingRows; i++) {
-            createGuessRow(' '.repeat(WORD_LENGTH), NONE_STATUS)
-        }
     }
-    
+
     //if the game has not ended clears display of previous guesses then renders all previous guesses, current guess and then empty rows for remaining guesses
     function updateCurrentGuessDisplay() {
         if (!gameOver) {
             const display = document.getElementById('guessesDisplay');
             display.innerHTML = '';
             // Render all previous guesses
-                //these for loops generate the array of the statuses of the letters in the guess
-            for (let i = 0; i < guesses.length; i++) {
-                const guess = guesses[i];
-                const status = Array(guess.length).fill('incorrect');
-                const targetLetterCounts = {};
-                for (let j = 0; j < targetWord.length; j++) {
-                    const letter = targetWord[j];
-                    targetLetterCounts[letter] = (targetLetterCounts[letter] || 0) + 1;
-                }
-                for (let j = 0; j < guess.length; j++) {
-                    if (guess[j] === targetWord[j]) {
-                        status[j] = 'correct';
-                        targetLetterCounts[guess[j]]--;
-                    }
-                }
-                for (let j = 0; j < guess.length; j++) {
-                    if (status[j] === 'correct') continue;
-                    if (targetWord.includes(guess[j]) && targetLetterCounts[guess[j]] > 0) {
-                        status[j] = 'partial';
-                        targetLetterCounts[guess[j]]--;
-                    }
-                }
-                createGuessRow(guess, status);
-            }
-    
+            generateGuessArray()
             // Render the current guess
             createGuessRow(activeGuess.padEnd(WORD_LENGTH, ' '), NONE_STATUS);
-    
             // Render empty rows for remaining guesses
             const remainingRows = GAME_LENGTH - guesses.length - 1;
             for (let i = 0; i < remainingRows; i++) {
