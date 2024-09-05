@@ -233,32 +233,25 @@ document.addEventListener('DOMContentLoaded', () => {
     function showAlert(message, final = false) {
     const alertContainer = document.getElementById('alert-container');
     const alertDiv = document.createElement('div');
-    const reloadButton = document.createElement('button');
-    
     alertContainer.innerHTML = '';
     alertDiv.className = 'alert';
-    alertDiv.textContent = message;
-    
+    alertDiv.textContent = final ? message + " " : message;
     alertContainer.appendChild(alertDiv);
-        // Remove alert after 5 seconds if final is false
-        if (!final) {
-            setTimeout(() => {
-                alertContainer.removeChild(alertDiv);
-            }, 5000);
-        }
-        
-        // Add reload button inside the alert if it's the final message
-        if (final) {
-            reloadButton.textContent = "Play again";
-            reloadButton.className = 'alert-button'; // Adding a separate class for button styling
-            alertDiv.appendChild(reloadButton); // Append the button to the alert div
+    if (final) {
+        const reloadButton = document.createElement('button');
+        reloadButton.textContent = "Play again";
+        reloadButton.className = 'alert-button';
+        alertDiv.appendChild(reloadButton);
 
-            // Button reload click event
-            reloadButton.addEventListener('click', () => {
-                location.reload();
-            });
-        }
+        reloadButton.addEventListener('click', () => {
+            location.reload();
+        });
+    } else {
+        setTimeout(() => {
+            alertContainer.removeChild(alertDiv);
+        }, 5000);
     }
+}
 
     //!Event Handling
     //keydown
