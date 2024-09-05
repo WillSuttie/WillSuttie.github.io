@@ -99,7 +99,7 @@ const OTHER_WORDS = ["aahed", "aalii", "aargh", "aarti", "abaca", "abaci", "abac
                 keyButton.style.justifyContent = 'center';
                 keyButton.style.alignItems = 'center';
                 keyButton.style.fontFamily = 'Franklin Gothic, Arial, Helvetica';
-                keyButton.style.fontSize = (key === 'ENTER')? '15px': '20px';
+                keyButton.style.fontSize = (key === 'ENTER')? '13px': '20px';
                 keyButton.style.width = (key === '⌫')||(key === 'ENTER')? '45px': '25px';
                 keyButton.style.height = '35px';
                 keyButton.style.margin = '3px';
