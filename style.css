@@ -130,7 +130,7 @@ html, body {
     box-sizing: border-box;
     text-align: center;
     width: 100%;
-    max-width: 200px;
+    max-width: 80px;
 }
 
 .alert-button:hover {
