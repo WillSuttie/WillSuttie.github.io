@@ -228,30 +228,36 @@ document.addEventListener('DOMContentLoaded', () => {
         //displays the word
         document.getElementById('guessesDisplay').appendChild(row);
     }
-
-    // displays messages to user
+    
     function showAlert(message, final = false) {
-    const alertContainer = document.getElementById('alert-container');
-    const alertDiv = document.createElement('div');
-    alertContainer.innerHTML = '';
-    alertDiv.className = 'alert';
-    alertDiv.textContent = final ? message + "O" : message;
-    alertContainer.appendChild(alertDiv);
-    if (final) {
-        const reloadButton = document.createElement('button');
-        reloadButton.textContent = "Play again";
-        reloadButton.className = 'alert-button';
-        alertDiv.appendChild(reloadButton);
-
-        reloadButton.addEventListener('click', () => {
-            location.reload();
-        });
-    } else {
-        setTimeout(() => {
-            alertContainer.removeChild(alertDiv);
-        }, 5000);
+        const alertContainer = document.getElementById('alert-container');
+        const alertDiv = document.createElement('div');
+        alertContainer.innerHTML = '';
+        alertDiv.className = 'alert';
+        
+        // Ensure the space is added to the message if final is true
+        if (final) {
+            message += " ";
+        }
+        
+        alertDiv.textContent = message;
+        alertContainer.appendChild(alertDiv);
+    
+        if (final) {
+            const reloadButton = document.createElement('button');
+            reloadButton.textContent = "Play again";
+            reloadButton.className = 'alert-button';
+            alertDiv.appendChild(reloadButton);
+    
+            reloadButton.addEventListener('click', () => {
+                location.reload();
+            });
+        } else {
+            setTimeout(() => {
+                alertContainer.removeChild(alertDiv);
+            }, 5000);
+        }
     }
-}
 
     //!Event Handling
     //keydown
