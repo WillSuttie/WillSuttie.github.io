@@ -130,7 +130,7 @@ html, body {
     box-sizing: border-box;
     text-align: center;
     min-height: 30px; /* Ensuring the button has enough height */
-    max-width: 80px;
+    max-width: 85px;
 }
 
 @media (max-width: 600px) {
