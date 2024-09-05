@@ -129,8 +129,16 @@ html, body {
     align-self: center;
     box-sizing: border-box;
     text-align: center;
-    width: 100%;
+    min-height: 30px; /* Ensuring the button has enough height */
     max-width: 80px;
+}
+
+@media (max-width: 600px) {
+    .alert-button {
+        max-width: 60px; /* Adjust max-width for smaller screens */
+        min-height: 25px; /* Adjust minimum height for smaller screens */
+        padding: 4px 8px; /* Adjust padding for smaller screens */
+    }
 }
 
 .alert-button:hover {
