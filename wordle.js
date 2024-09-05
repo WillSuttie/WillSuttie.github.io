@@ -2,7 +2,6 @@
 //!                                       - HOW EVENTLISTENERS WORK
 //!                                       - WHEN YOU FIND A PROBLEM THAT SEEMS COMPLICATED, LOOK FOR A SIMPLE SOLUTION
 //!                                       - "TOO MANY COMMENTS" IS A MUCH EASIER PROBLEM TO FIX THAN "TOO FEW COMMENTS"
-//!                                       - IF YOU LOOK FOR SIMPLE BUGS FIRST YOU FEEL LIKE LESS OF AN IDIOT WHEN YOU FIND THEM
 
 document.addEventListener('DOMContentLoaded', () => {
     let won = false;
@@ -99,7 +98,7 @@ const OTHER_WORDS = ["aahed", "aalii", "aargh", "aarti", "abaca", "abaci", "abac
                 keyButton.style.justifyContent = 'center';
                 keyButton.style.alignItems = 'center';
                 keyButton.style.fontFamily = 'Franklin Gothic, Arial, Helvetica';
-                keyButton.style.fontSize = (key === 'ENTER')? '12px': '20px';
+                keyButton.style.fontSize = (key === 'ENTER')? '15px': '20px';
                 keyButton.style.width = (key === '⌫')||(key === 'ENTER')? '45px': '25px';
                 keyButton.style.height = '35px';
                 keyButton.style.margin = '3px';
@@ -115,8 +114,9 @@ const OTHER_WORDS = ["aahed", "aalii", "aargh", "aarti", "abaca", "abaci", "abac
                         updateCurrentGuessDisplay();
                     }
                     else {
+                        if (activeGuess.length < WORD_LENGTH) {
                         activeGuess = activeGuess + key
-                        updateCurrentGuessDisplay();
+                        updateCurrentGuessDisplay();}
                     }
                 });
                 rowDiv.appendChild(keyButton);
@@ -231,16 +231,24 @@ const OTHER_WORDS = ["aahed", "aalii", "aargh", "aarti", "abaca", "abaci", "abac
     //displays messages to user
     function showAlert(message, final = false) {
         const alertContainer = document.getElementById('alert-container');
-        while (alertContainer.firstChild) {
-            alertContainer.removeChild(alertContainer.firstChild);
-        }
         const alertDiv = document.createElement('div');
+        const reloadButton = document.createElement('button');
+        alertContainer.innerHTML = '';
         alertDiv.className = 'alert';
         alertDiv.textContent = message;
         alertContainer.appendChild(alertDiv);
         !final && setTimeout(() => {
             alertContainer.removeChild(alertDiv);
         }, 5000);
+        
+        if (final){
+            reloadButton.textContent = "Play again"
+            reloadButton.className = 'reload'
+            alertContainer.appendChild(alertDiv);
+            reloadButton.addEventListener('click', () => {
+                location.reload();
+            });
+        }
     }
 
     //!Event Handling
