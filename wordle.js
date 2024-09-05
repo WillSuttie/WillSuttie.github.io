@@ -110,7 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 keyButton.id = key;
                 keyButton.addEventListener('click', () => {
                     if (key == 'ENTER'){processGuess(activeGuess)}
-                    else if (key == '⌫'){activeGuess = activeGuess.slice(0, -1)}
+                    else if (key == '⌫'){
+                        activeGuess = activeGuess.slice(0, -1)
+                        updateCurrentGuessDisplay();
+                    }
                     else {
                         activeGuess = activeGuess + key
                         updateCurrentGuessDisplay();
