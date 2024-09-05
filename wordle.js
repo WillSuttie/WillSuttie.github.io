@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const alertDiv = document.createElement('div');
     alertContainer.innerHTML = '';
     alertDiv.className = 'alert';
-    alertDiv.textContent = final ? message + " " : message;
+    alertDiv.textContent = final ? message + "O" : message;
     alertContainer.appendChild(alertDiv);
     if (final) {
         const reloadButton = document.createElement('button');
