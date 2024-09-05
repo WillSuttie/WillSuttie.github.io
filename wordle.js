@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!gameOver) {
             const display = document.getElementById('guessesDisplay');
             display.innerHTML = '';
-    
+            console.log(`1 - updateCurrentGuessDisplay(${activeGuess}) `)
             // Render all previous guesses
                 //these for loops generate the array of the statuses of the letters in the guess
             for (let i = 0; i < guesses.length; i++) {
@@ -218,6 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     //creates letter boxes for word displays, groups them in a div (guess,) is the word that has been guessed; (, status) is an array of whether each letter is correct, incorrect, partial or none.
     function createGuessRow(guess, status) { 
+        console.log(`2 - createGuessRow(${guess}) `)
         const statusClasses = {
             correct: 'correct',
             incorrect: 'incorrect',
@@ -235,6 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
             row.appendChild(letterBox);
         }
         //displays the word
+        console.log(`3 - createGuessRow(${guess}) `)
         document.getElementById('guessesDisplay').appendChild(row);
     }
 
@@ -254,6 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //!Event Handling
+    //being that which occurs upon the pressing of thine keys
     function keyPress(event) {
         if (!gameOver){
             const key = event.key.toUpperCase();
@@ -266,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     activeGuess += key;
                 }
             }
-            
+            console.log("0")
             updateCurrentGuessDisplay();
         }
     }
