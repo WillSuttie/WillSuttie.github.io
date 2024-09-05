@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (_guess === targetWord){
             won = true;
-            showAlert("You win!", true);
+            showAlert("You win! ", true);
             gameOver = true;
         }
         guesses.push(_guess);
