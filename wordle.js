@@ -2,7 +2,7 @@
 //!                                       - HOW EVENTLISTENERS WORK
 //!                                       - WHEN YOU FIND A PROBLEM THAT SEEMS COMPLICATED, LOOK FOR A SIMPLE SOLUTION
 //!                                       - "TOO MANY COMMENTS" IS A MUCH EASIER PROBLEM TO FIX THAN "TOO FEW COMMENTS"
-
+//!                                       - IF YOU LOOK FOR SIMPLE BUGS FIRST YOU FEEL LIKE LESS OF AN IDIOT WHEN YOU FIND THEM
 document.addEventListener('DOMContentLoaded', () => {
     let won = false;
     let gameOver = false;
