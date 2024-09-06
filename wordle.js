@@ -29,6 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function getRandomInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+    //Darken hex values
+    function hexColourChanger(hex, difference){
+        hex = hex.replace(/^#/, '');
+        let bigint = parseInt(hex, 16);
+        let r = (bigint >> 16) & 255;
+        let g = (bigint >> 8) & 255;
+        let b = bigint & 255;
+        return `rgb(${r + difference}, ${g + difference}, ${b + difference})`;        
+    }
 
     //!Core Game Functions
     // empty previous displayed guesses, shows input row and empty rows for remaining guesses
@@ -67,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (_guess === targetWord){
             won = true;
-            showAlert("You win! ", true);
+            showAlert("You win!", true);
             gameOver = true;
         }
         guesses.push(_guess);
@@ -119,6 +128,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         activeGuess = activeGuess + key
                         updateCurrentGuessDisplay();}
                     }
+                });
+                keyButton.addEventListener('mouseenter', () => {
+                    // Change the background color when hovered
+                    keyButton.style.background = hexColourChanger(row[key], -14);
+                });
+                keyButton.addEventListener('mouseleave', () => {
+                    // Restore the original background color when hover ends
+                    keyButton.style.background = row[key];
                 });
                 rowDiv.appendChild(keyButton);
             }
@@ -228,27 +245,20 @@ document.addEventListener('DOMContentLoaded', () => {
         //displays the word
         document.getElementById('guessesDisplay').appendChild(row);
     }
-    
+
+    // displays messages to user
     function showAlert(message, final = false) {
-        const alertContainer = document.getElementById('alert-container');
-        const alertDiv = document.createElement('div');
-        alertContainer.innerHTML = '';
-        alertDiv.className = 'alert';
-        
-        // Ensure the space is added to the message if final is true
-        if (final) {
-            message += " ";
-        }
-        
-        alertDiv.textContent = message;
-        alertContainer.appendChild(alertDiv);
-    
+    const alertContainer = document.getElementById('alert-container');
+    const alertDiv = document.createElement('div');
+    alertContainer.innerHTML = '';
+    alertDiv.className = 'alert';
+    alertDiv.textContent = final ? message + " " : message;
+    alertContainer.appendChild(alertDiv);
         if (final) {
             const reloadButton = document.createElement('button');
             reloadButton.textContent = "Play again";
             reloadButton.className = 'alert-button';
             alertDiv.appendChild(reloadButton);
-    
             reloadButton.addEventListener('click', () => {
                 location.reload();
             });
