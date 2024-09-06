@@ -7,8 +7,6 @@
 //?WHAT I COULD ADD NEXT - INSTEAD OF GENERATING A NEW WORD EVERY TIME IT'S RELOADED, GENERATE A DIFFERENT SET BASED ON THE DAY AND KEEP SCORE AS YOU
 //?                        PROGRESS THROUGH
 
-//TODO - 
-
 document.addEventListener('DOMContentLoaded', () => {
     let won = false;
     let gameOver = false;
@@ -122,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 keyButton.style.border = `2px solid ${row[key]}`;
                 keyButton.style.borderRadius = '5px';
                 keyButton.style.background = row[key];
-                keyButton.style.color = '#FFFFFF';
+                keyButton.style.color = 'rgb(255, 255, 255)';
                 keyButton.style.cursor = 'pointer';
                 keyButton.id = key;
                 keyButton.addEventListener('click', () => {
