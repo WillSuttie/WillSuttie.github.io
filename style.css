@@ -4,7 +4,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #121213;
+    background-color: rgb(18, 18, 19);
 }
 
 #container {
@@ -46,7 +46,7 @@ html, body {
     font-size: 40px;
     width: 60px;
     height: 60px;
-    color: #FFFFFF;
+    color: rgb(255, 255, 255);
     align-items: center;
     justify-content: center;
     margin: 2px;
@@ -73,53 +73,62 @@ html, body {
     width: 25px;
     height: 35px;
     margin: 3px;
-    border: 2px solid #818384;
+    border: 2px solid rgb(129, 131, 132);
     border-radius: 5px;
-    background: #818384;
-    color: #ffffff;
+    background: rgb(129, 131, 132);
+    color: rgb(255, 255, 255);
 }
 
+
 .correct {
-    background-color: #538d4E;
-    border: 1px solid #538d4E;
+    background-color: rgb(83, 141, 78);
+    border: 1px solid rgb(83, 141, 78);
 }
 
 .partial {
-    background-color: #b59f3b;
-    border: 1px solid #b59f3b;
+    background-color: rgb(181, 159, 59);
+    border: 1px solid rgb(181, 159, 59);
 }
 
 .incorrect {
-    background-color: #3a3a3c;
-    border: 1px solid #3a3a3c;
+    background-color: rgb(58, 58, 60);
+    border: 1px solid rgb(58, 58, 60);
 }
 
 .none {
-    background-color: #121213;
-    border: 1px solid #818384;
+    background-color: rgb(18, 18, 19);
+    border: 1px solid rgb(129, 131, 132);
     width: 60px;
     height: 60px;
     margin: 2px;
 }
 
 .alert {
-    background-color: #430b10;
-    color: #FFFFFF;
-    padding: 10px; /* Reduced padding */
+    background-color: rgb(67, 11, 16);
+    color: rgb(255, 255, 255);
+    padding: 10px;
     margin: 10px;
     border-radius: 5px;
     font-family: 'Franklin Gothic', Arial, Helvetica;
-    display: flex; /* Enable flexbox */
+    display: flex;
     flex-direction: row;
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    text-align: center; /* Center the text */
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    text-align: center;
+    padding-right: 20px;
+    gap: 10px;
+}
+
+#alert-container {
+    display: flex;
+    gap: 10px;
 }
 
 .alert-button {
-    background-color: #FFFFFF;
-    color: #430b10;
-    border: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(67, 11, 16);
+    border: 1px solid rgb(67, 11, 16);
     padding: 5px 10px;
     margin: 0;
     border-radius: 3px;
@@ -129,18 +138,18 @@ html, body {
     align-self: center;
     box-sizing: border-box;
     text-align: center;
-    min-height: 30px; /* Ensuring the button has enough height */
-    max-width: 85px;
+    min-height: 30px;
+    max-width: 80px;
 }
 
 @media (max-width: 600px) {
     .alert-button {
-        max-width: 60px; /* Adjust max-width for smaller screens */
-        min-height: 25px; /* Adjust minimum height for smaller screens */
-        padding: 4px 8px; /* Adjust padding for smaller screens */
+        max-width: 60px;
+        min-height: 25px;
+        padding: 4px 8px;
     }
 }
 
 .alert-button:hover {
-    background-color: #f1f1f1;
+    background-color: rgb(241, 241, 241);
 }
